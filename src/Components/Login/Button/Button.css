@@ -1,0 +1,35 @@
+button {
+    padding: auto;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    width: 120px;
+    border-radius: 12px;
+    background: inherit;
+    border: 1px solid var(--main);
+    color: var(--main);
+    letter-spacing: 1px;
+    text-shadow: 0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  button:hover {
+    color: var(--text-light);
+    background: var(--main);
+  }
+  button:active {
+    letter-spacing: 2px;
+  }
+  
+  button:disabled,
+  button:focus:disabled,
+  button:hover:disabled,
+  button:active:disabled {
+    border-color: var(--border);
+    color: var(--text);
+    background: inherit;
+    cursor: not-allowed;
+  }

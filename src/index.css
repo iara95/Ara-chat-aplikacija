@@ -1,0 +1,307 @@
+body{
+  margin: 0;
+}
+
+.App{
+  height: 100vh;
+  font-family: 'Hind Madurai', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.App > div > div:first-of-type {
+  margin-bottom: 20px;
+}
+
+
+
+.App-header {
+  background-color: #ca432b;
+  overflow: visible;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.App-header h1{
+  margin: 10px 0;
+}
+
+
+.Messages-list {
+  padding: 10px 0;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+  max-height: 70vh; /*dodano kako visina chat-a ne bi sjebala sve*/
+} 
+
+.Messages-message {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.Messages-message.otherMember {
+  justify-content: start;
+  flex-direction: row;
+  text-align: left;
+}
+
+.Message-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.otherMember > .Message-content {
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.Messages-message > .avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 10px -10px;
+}
+
+.Message-content > .username {
+  display: block;
+  color: gray;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px; 
+}
+
+.Message-content > .text {
+  padding: 10px 20px;
+  max-width: 800px;
+  margin: 0;
+  border-radius: 16px 0px 16px 16px;
+  background-color: #ca432b;
+  color: white;
+  display: inline-block;
+}
+
+.Message-content > .timestamp {
+  font-size: 11px;
+  line-height: 13px;
+  margin-bottom: 5px;
+}
+
+.otherMember > .Message-content .text {
+  border-radius: 0px 16px 16px 16px;
+  background-color: #F5F5F5;
+  color: #141414
+}
+
+.currentMember .Message-content .text{
+  width: fit-content;
+  align-self: flex-end;
+} 
+
+form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #E8E8E8;
+  border-radius: 24px;
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 22px;
+  color: black;
+}
+
+input::placeholder{
+  color: #C7C3C3;
+}
+
+.Button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #ca432b;
+  color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  margin-left: 10px;
+  background: url('./Components/Assets/sendArrow.png') no-repeat;
+  align-self: center;
+}
+
+.login {
+  margin: 5rem auto 3rem auto;
+  padding: 1.5rem;
+  width: 540px; /*stavi oko 35% ako ne paše*/
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -10rem; */
+}
+
+.login form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.login label {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: rgb(133, 133, 133);
+}
+
+.login svg {
+  margin-bottom: 1rem;
+}
+
+.login .inputText {
+  font: inherit;
+  text-align: center;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.login .inputText:focus {
+  outline: none;
+  border-color: #1ecd97;
+}
+
+
+.invalid .inputText {
+  border-color: red;
+}
+
+@media screen and (max-width: 600px) {
+  .login {
+    margin: 1rem auto 2rem auto;
+    width: 90%;
+  }
+}
+
+.avatar {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  height: 8rem;
+}
+
+.avatar img {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0px 2px 8px var(--shadow));
+}
+.avatar div {
+  font-size: 0.7rem;
+  color: var(--text);
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  justify-self: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+button {
+  padding: auto;
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 120px;
+  border-radius: 12px;
+  background-color: #ca432b;
+  border: 1px solid #ca432b;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  color: var(--text-light);
+  background: var(--main);
+}
+button:active {
+  letter-spacing: 2px;
+}
+
+button:disabled,
+button:focus:disabled,
+button:hover:disabled,
+button:active:disabled {
+  border-color: var(--border);
+  color: var(--text);
+  background: inherit;
+  cursor: not-allowed;
+}
+
+.inputColor{
+  padding: 0;
+  margin-bottom: 20px;
+}
+.login label{
+  margin: 0px;
+}
+
+.avatars {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.item {
+  cursor: pointer;
+  padding: 25px;
+  transition: 0.3s box-shadow;
+  border-radius: 13px;
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.item.active {
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.16);
+}
+
+.item:hover{
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.16);
+}
